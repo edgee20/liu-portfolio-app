@@ -6,17 +6,28 @@ import "./globals.css";
 const sfPro = localFont({
   src: [
     {
-      path: "../public/fonts/SF-Pro-Text-Bold.woff2",
-      weight: "800",
+      path: "../public/fonts/SF-Pro-Text-Bold.otf",
+      weight: "700",
       style: "normal",
     },
     {
-      path: "../public/fonts/SF-Pro-Text-Semibold.woff2",
-      weight: "700",
+      path: "../public/fonts/SF-Pro-Text-Semibold.otf",
+      weight: "500",
       style: "normal",
     },
   ],
   variable: "--font-sf-pro",
+});
+
+const garamond = localFont({
+  src: [
+    {
+      path: "../public/fonts/ITC-Garamond-Std-Book-Narrow-Italic.woff2",
+      weight: "500",
+      style: "italic",
+    },
+  ],
+  variable: "--font-garamond",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sfPro.variable} font-sans antialiased`}>
+      <body
+        className={`${sfPro.variable} ${garamond.variable} font-sans antialiased`}
+      >
         {children}
       </body>
     </html>
